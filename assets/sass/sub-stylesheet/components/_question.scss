@@ -1,0 +1,209 @@
+.accordion-item {
+  @extend %mb-20;
+
+  .accordion-button {
+    @extend %p-0,
+    %mb-0,
+    %text-600,
+    %bg-theme,
+    %white-color,
+    %justify-between-im, %pointer, %text-capitalize;
+    border-radius: 0 !important;
+    @include font-size(16px);
+
+    @include breakpoint(sm) {
+      @include font-size(20px);
+    }
+
+    .plus-icon {
+      @extend %wd-40,
+      %hd-40,
+      %bgtheme,
+      %border-radius-4,
+      %p-rel,
+      %transition;
+      margin-left: auto;
+
+      &:active {
+        @extend %bgtheme;
+      }
+
+      &:after {
+        @extend %abs,
+        %top-50,
+        %left-50;
+        width: 14px;
+        height: 2px;
+        @extend %bg-white;
+        transform: translate(-50%, -50%);
+      }
+
+      &:before {
+        @extend %abs,
+        %top-50,
+        %left-50;
+        width: 2px;
+        height: 14px;
+        @extend %bg-white;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:after {
+      @extend %d-none;
+    }
+
+    &:focus {
+      border-color: none;
+      box-shadow: none;
+    }
+  }
+
+  .accordion-body {
+    @extend %p-0;
+  }
+
+  .accordion-button:not(.collapsed) {
+    box-shadow: none;
+    @extend %transition,
+    %bg-theme-im;
+    border-radius: none !important;
+
+    .plus-icon {
+      @extend %bg-white,
+      %transition;
+
+      &:before {
+        width: 14px;
+        height: 2px;
+      }
+
+      &:after {
+        @extend %bg-theme-im;
+      }
+    }
+  }
+
+  &--itme2Serpage {
+    @extend %p-0-im, %border-none-im;
+
+    .accordion-button {
+      @extend %white-color;
+      @include padding(15px 20px);
+
+      .plus-icon {
+        @extend %bg-white;
+
+        &:after {
+          @extend %bg-theme-im;
+        }
+
+        &:before {
+          @extend %bg-theme-im;
+        }
+      }
+    }
+
+    .accordion-body {
+      @extend %bgtheme;
+      @include padding(25px 10px);
+
+      @include breakpoint(lg) {
+        @include padding(25px 30px);
+      }
+    }
+
+    .accordion-button:not(.collapsed) {
+      @extend %transition, %bgtheme, %border-none-im;
+
+      .plus-icon {
+        @extend %transition,
+        %bg-white;
+      }
+    }
+  }
+}
+
+.resume {
+  &__workingexperience {
+    h6 {
+      @extend %my-10;
+      color: $theme;
+    }
+
+    >ul {
+      @extend %mt-10;
+
+      li {
+        @extend %mb-10;
+
+        &:last-child {
+          @extend %mb-0;
+          width: 100px;
+        }
+
+        span {
+          color: #000;
+          font-size: 18px;
+          @extend %mr-5;
+        }
+
+        ul {
+          @extend %flex, %mp-0-im;
+          gap: 4px;
+          width: 300px;
+
+          @include breakpoint(md) {
+            width: 500px;
+          }
+
+          @include breakpoint(lg) {
+            width: 600px;
+          }
+
+          li {
+            @extend %list-none, %d-inline-block, %mb-0-im;
+          }
+        }
+      }
+
+    }
+  }
+
+  &__skillitem {
+    @extend %mb-20;
+
+    p {
+      @extend %mt-5;
+    }
+  }
+
+  &__education {
+    @extend %flex, %align-items-center;
+    justify-content: space-between;
+
+    .left {
+      p {
+        @extend %mt-5;
+      }
+    }
+
+    .right {
+      span {
+        @extend %black-color;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__certificate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2%;
+
+    img {
+      width: 48%;
+    }
+  }
+}

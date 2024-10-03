@@ -1,0 +1,610 @@
+// Container
+@include breakpoint(xl) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1170px !important;
+    }
+}
+
+// all section header here
+.section__header {
+    @include margin-bottom(30px);
+
+    span {
+        @extend %text-color, %text-uppercase, %text-600;
+        @include font-size(15px);
+    }
+}
+
+// all section padding here
+.padding-block {
+    @include padding-block(120px);
+}
+
+//btn
+.allbtn {
+    @include padding(15px 40px);
+    @include border-radius(4px);
+    @extend %white-color, %text-decoration, %p-rel, %text-700, %hidden, %bg-theme, %d-inline-block,
+    %rubik, %text-uppercase;
+    @include margin-top(30px);
+    @include font-size(16px);
+    z-index: 1;
+
+    &::before {
+        @extend %bg-white, %abs;
+        height: 140px;
+        left: -70px;
+        top: -50px;
+        transform: rotate(-35deg);
+        @include transition(1.2s);
+        width: 30px;
+        opacity: 0;
+    }
+
+    &:hover {
+        @extend %white-color-im;
+        @include border-radius(4px);
+
+        &::before {
+            left: 125%;
+            opacity: 0.5;
+        }
+    }
+}
+
+@-webkit-keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+// footer heading 
+.footerheading {
+    @include margin-bottom(38px);
+
+    h5 {
+        @extend %white-color,
+        %text-capitalize;
+
+    }
+}
+
+
+// pagination style here
+.swiper-button-next,
+.swiper-button-prev {
+    &:after {
+        @include font-size(22px);
+        @extend %text-900;
+        @include padding(18px 23px);
+        @extend %white-color;
+        @include transition(0.5s ease-in-out);
+        @include border-radius(50px);
+    }
+}
+
+// bottom scrollbar start here
+.scrollToTop {
+    position: fixed;
+    bottom: -30%;
+    right: 5%;
+    z-index: 99;
+    @extend %d-inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    @extend %text-center, %white-color;
+    @extend %bg-theme;
+    @include add-prefix(transition, $transition2);
+
+    i,
+    svg {
+        @extend %white-color;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 20px 0px rgba($theme, $alpha: .50);
+    }
+}
+
+// header smoth animation
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.pagi {
+    @include margin-top(50px);
+
+    .pagi-inner {
+        @extend %flex, %justify-center;
+
+        ul {
+            @extend %flex;
+            gap: 10px;
+
+            li {
+                @extend %list-none;
+
+                a {
+                    @extend %wd-40, %hd-40, %bg-white, %d-inline-block,
+                    %line-height-40, %black-color, %text-center, %text-700, %text-capitalize, %text-decoration;
+                    @include border-radius(5px);
+                    border: 0.5px solid #a2a2a24f;
+
+                    &.active {
+                        @extend %white-color, %bg-theme;
+
+                    }
+
+                    &:hover {
+                        @extend %white-color, %bg-theme;
+
+                    }
+
+                }
+
+                &:first-child {
+                    a {
+                        i {
+                            @extend %text-color;
+
+                        }
+
+                        &:hover {
+                            i {
+                                @extend %white-color;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    a {
+
+                        i {
+                            @extend %text-color;
+
+                        }
+
+                        &:hover {
+                            i {
+                                @extend %white-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.overly {
+    @extend %p-rel;
+
+    &::after {
+        @extend %abs, %top-0, %left-0, %w-100, %h-100;
+        background: rgba(0, 0, 0, .7);
+        z-index: 1;
+    }
+}
+
+.go-up {
+    @extend %p-rel;
+    z-index: 10;
+}
+
+.mapinner {
+    @include padding(20px);
+
+    iframe {
+        @extend %w-100;
+        min-height: 300px;
+    }
+}
+
+.fourzero {
+    &__content {
+        p {
+            max-width: 688px;
+            @extend %auto, %mt-20;
+        }
+
+        a {
+            @include margin-top(20px);
+            @extend %d-inline-block;
+        }
+    }
+}
+
+.even__pagination,
+.testmonial__pagination {
+    @extend %d-none;
+
+    @include breakpoint(lg) {
+        display: inherit;
+    }
+
+    z-index: 9999;
+    top: 50% !important;
+
+    @include breakpoint(xxl) {
+        left: 92% !important;
+    }
+
+    transform: translateY(-50%) !important;
+    width: 50px;
+    height: 50px;
+
+    .swiper-pagination-bullet {
+        border: 2px solid $theme;
+        @extend %p-rel, %opacity-1, %wd-20-im, %hd-20-im, %bgtransprant, %line-height-20;
+
+        &:after {
+            @extend %abs, %top-50, %left-50, %text-center-im;
+            width: 8px;
+            height: 8px;
+            line-height: 8px;
+            @include border-radius(50%);
+            transform: translate(-50%, -50%);
+            @extend %bg-theme;
+        }
+
+    }
+
+    .swiper-pagination-bullet-active {
+        border: 2px solid $theme !important;
+
+        &:after {
+            @extend %bg-white;
+        }
+    }
+}
+
+.even__pagination {
+    @include breakpoint(xxl) {
+        left: 97% !important;
+    }
+
+    @extend %d-none-im;
+
+    @include breakpoint(xl) {
+        display: inherit !important;
+    }
+}
+
+.btn-menu-main {
+    background: #152136 !important;
+    height: 100%;
+    padding: 20px 30px;
+    position: fixed;
+    @extend %abs, %right-0, %top-0, %transition2;
+    width: 340px;
+    z-index: 9999999;
+    transform: translateX(100%);
+    padding-bottom: 40px;
+
+    &.btn-menu-main-right {
+        transform: translateX(0);
+        height: 700px;
+    }
+
+    .sideheader {
+        @extend %flex, %align-items-center, %justify-between, %p-rel, %pb-30;
+
+        .logo {
+            img {
+                width: 70px;
+                height: 70px;
+                background: $white-color;
+                border-radius: 35px;
+            }
+        }
+
+        .icon {
+            @extend %wd-30, %hd-30, %line-height-30, %text-center, %bgtheme;
+
+            i {
+                @extend %text-color, %pointer;
+            }
+        }
+
+        &:after {
+            @extend %abs, %bottom-0, %left-0, %w-100, %bg-white;
+            height: 1px;
+
+        }
+    }
+
+    .side-info {
+        @include margin-top(20px);
+
+        .contact-list {
+            h6 {
+                @extend %white-color, %mb-5;
+            }
+
+            p {
+                @extend %white-color, %font-14;
+
+            }
+
+
+        }
+    }
+
+    .allsocial-icon {
+        @extend %my-30, %flex, %align-items-center;
+        gap: 10px;
+
+        h6 {
+            @extend %w-100, %white-color;
+        }
+
+        a {
+            @extend %wd-30, %hd-30, %bg-theme, %line-height-30, %d-inline-block, %text-center;
+
+            i {
+                @extend %white-color;
+            }
+
+            &:hover {
+                @extend %bg-white;
+
+                i {
+                    @extend %text-color;
+                }
+            }
+        }
+    }
+
+    .allphoto {
+        .item {
+            @extend %p-rel, %hidden;
+
+            a {
+                @extend %wd-95, %hd-95;
+
+                img {
+                    @extend %w-100;
+                }
+            }
+
+            .inneritem {
+                @extend %abs, %top-50, %left-50, %flex, %align-items-center, %justify-center, %w-100, %h-100;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                @include transition(0.3s ease-in-out);
+
+                .upitem {
+                    @include transform(translate(51px));
+                    @include transition(0.3s ease-in-out);
+
+                    a {
+                        @extend %bgtheme, %text-center, %d-inline-block, %wd-35-im, %hd-35;
+                        line-height: 34px;
+                        @include border-radius(20px);
+                        @include transition(0.3s ease-in-out);
+
+                        i {
+                            @extend %text-color, %font-12;
+                            @include transition(0.3s ease-in-out);
+                        }
+
+                        &:hover {
+                            @extend %bg-theme;
+
+                            i {
+                                @extend %white-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .inneritem {
+                    @extend %opacity-1;
+
+                    .upitem {
+                        &:nth-child(1) {
+                            @include transform(translate(0px));
+                            @include transition(0.3s ease-in-out);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.imghover {
+    @extend %p-rel;
+    z-index: 2;
+
+    &::before {
+        @extend %abs, %top-0, %bottom-0, %left-50, %opacity-1;
+        right: 51%;
+        background: rgba(255, 255, 255, 0.2);
+        pointer-events: none;
+    }
+
+    &::after {
+        @extend %abs, %top-50, %right-0, %bottom-50, %left-0, %opacity-1;
+        background: rgba(255, 255, 255, 0.3);
+        pointer-events: none;
+    }
+
+    &:hover {
+        &::before {
+            @extend %left-0, %right-0, %opacity-0;
+            -webkit-transition: all 900ms linear;
+            transition: all 900ms linear;
+        }
+
+        &::after {
+            @extend %top-0, %bottom-0, %opacity-0;
+            -webkit-transition: all 900ms linear;
+            transition: all 900ms linear;
+        }
+    }
+}
+
+.footer {
+    @include padding(60px 0);
+
+    &__img {
+        @extend %text-center;
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        h6 {
+            @include margin-top(15px);
+        }
+    }
+}
+
+.breadcrumb {
+    background: url(..//..//img/bradcampbg.jpg);
+    padding: 120px 0;
+    background-position: center;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.65);
+
+    nav {
+        ol {
+            li {}
+        }
+    }
+}

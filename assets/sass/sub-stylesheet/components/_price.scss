@@ -1,0 +1,60 @@
+.price {
+  @extend %bgtheme;
+
+  &__inner {
+    @include padding(40px 30px);
+    box-shadow: 0 5px 20px #4543601a;
+
+    @include breakpoint(xl) {
+      @include padding(35px);
+    }
+
+    .content {
+      h5 {
+        @extend %my-10;
+      }
+
+      .rate {
+        h5 {
+          line-height: 30px;
+          @extend %rubik, %text-color, %m-0-im;
+        }
+
+        span {
+          @extend %text-500, %d-inline-block;
+          margin-top: 3px;
+        }
+      }
+
+      .itemlist {
+        @include margin-top(25px);
+
+        ul {
+          @extend %mp-0-im, %flex;
+          flex-direction: column;
+          gap: 15px;
+
+          li {
+            @extend %list-none;
+
+            i {
+              @extend %mr-10;
+              color: $theme;
+            }
+          }
+        }
+      }
+
+      .pricebtn {
+        a {
+          @extend %white-color, %text-600;
+
+          &:hover {
+            @extend %white-color;
+          }
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.about{
+    &__left{ 
+        .personal_information{
+            @include margin-top(40px);
+            ul{
+                @extend %mp-0-im;
+                li{
+                    @extend %list-none, %flex, %mb-10;
+                    &:last-child{
+                        @extend %mb-0-im;
+                    }
+                   span{
+                    @extend %text-600;
+                    width: 145px;
+                   }
+                   p{
+                    @extend %text-500;
+                    i{
+                        @extend %mr-10;
+                        @include font-size(12px);
+                    }
+                   } 
+                }
+            }
+        }
+    }
+    &__right{
+        .top{            
+            .item{
+                @extend %bgtheme, %text-center, %border-radius-4;
+                @include padding(30px 5px);
+                @include breakpoint(sm){
+                    @include padding(30px 10px);
+                }
+                i{
+                    @include font-size(30px);
+                    @extend %text-color;
+                }
+                h6{
+                   @include margin-top(20px); 
+                   @include breakpoint(max-sm){
+                    @include font-size(17px);
+                   }
+                }   
+                
+            }
+        }
+        .bottom{
+            @include margin-top(50px);
+            .skill__item {
+                @include margin-bottom(25px);
+                &:last-child{
+                    @extend %mb-0-im;
+                }
+                @extend %w-100;
+                @include breakpoint(lg){
+                max-width: 500px;
+                }
+                .skill-title {
+                    @extend %flex,
+                    %align-items-center,
+                    %justify-between, %mb-10;
+                    .left {
+                        @extend %text-600,
+                        %text-capitalize;
+                        @include font-size(20px);
+                    }
+                    .right span {
+                        @extend %text-600, %text-color;
+                        @include font-size(16px);
+                        display: inline-block;
+                    }
+                }
+                .skillbar-container { 
+                    @extend %p-rel,%text-center,
+                    %border-radius-4,%bgtheme, %w-100;                    
+                    height: 6px;
+                    .skills{
+                        height: 7px; 
+                        width: 0;
+                        border: 0.5px solid $bg-theme;  
+                        border-radius: 4px;            
+                    }        
+                }                
+            } 
+        }
+    }
+    &__header{
+      margin-bottom: 10px;  
+    }
+}
