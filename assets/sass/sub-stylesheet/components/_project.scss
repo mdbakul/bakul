@@ -1,124 +1,150 @@
-.projectfilter{     
+.projectfilter {
     @extend %bgtheme-im;
+
     &__header {
-      @include margin-bottom(50px);
-      @extend %flex, %justify-between; 
-      align-items: flex-end;     
-      ul {
-        @extend %flex,        
-        %align-items-center, %ml-0-im, %pl-0-im;
-        gap: 15px 30px;
-        @include breakpoint(md){
-            gap: 30px;
-            border-bottom: 2px solid $white-color;
-            padding-bottom: 10px; 
-        }
-        li {
-            @extend %text-600,            
-            %pointer, %text-capitalize, %list-none, %border-radius-4, %p-rel;
-            color: $titlecolor;
-            @include font-size(16px);
-            &.active {
-                @extend %text-color;
-                &::after{
-                    @extend %abs, %left-0,%bg-theme, %transition, %w-100;                
+        @include margin-bottom(50px);
+        @extend %flex, %justify-between;
+        align-items: flex-end;
+
+        ul {
+            @extend %flex,
+            %align-items-center, %ml-0-im, %pl-0-im;
+            gap: 15px 30px;
+
+            @include breakpoint(md) {
+                gap: 30px;
+                border-bottom: 2px solid $white-color;
+                padding-bottom: 10px;
+            }
+
+            li {
+                @extend %text-600,
+                %pointer, %text-capitalize, %list-none, %border-radius-4, %p-rel;
+                color: $titlecolor;
+                @include font-size(16px);
+
+                &.active {
+                    @extend %text-color;
+
+                    &::after {
+                        @extend %abs, %left-0, %bg-theme, %transition, %w-100;
+                        height: 2px;
+                        top: 34px;
+                        transform: scaleX(1);
+                        transform-origin: left;
+                    }
+                }
+
+                &::after {
+                    @extend %abs, %left-0, %bg-theme, %transition, %w-100;
                     height: 2px;
                     top: 34px;
-                    transform: scaleX(1);
+                    transform: scaleX(0);
                     transform-origin: left;
-                }             
-            }       
-            &::after{
-                @extend %abs, %left-0,%bg-theme, %transition, %w-100;                
-                height: 2px;
-                top: 34px;
-                transform: scaleX(0);
-                transform-origin: left;
-            }
-            &:hover{
-                &::after{
-                    transform: scaleX(1); 
+                }
+
+                &:hover {
+                    &::after {
+                        transform: scaleX(1);
+                    }
                 }
             }
         }
-      } 
-      
+
     }
-    &__item{
+
+    &__item {
         @extend %p-rel, %border-radius-4, %hidden;
+
         a {
-        @extend %w-100-im;
-        img {
             @extend %w-100-im;
+
+            img {
+                @extend %w-100-im;
+            }
         }
-        }
-        .inneritem {                
+
+        .inneritem {
             @extend %abs, %top-50, %left-50, %flex, %align-items-center;
             transform: translate(-50%, -50%);
             opacity: 0;
             @include transition(0.3s ease-in-out);
+
             .upitem {
                 @extend %d-none;
-                @include breakpoint(md){
-                display: inherit;
+
+                @include breakpoint(md) {
+                    display: inherit;
                 }
+
                 &:nth-child(1) {
                     margin-right: 10px;
                     @include transform(translate(51px));
                     @include transition(0.3s ease-in-out);
                 }
+
                 &:nth-child(2) {
                     @include transform(translate(-51px));
                     @include transition(0.3s ease-in-out);
                 }
-                a {              
+
+                a {
                     @extend %bg-white, %text-center, %d-inline-block, %wd-40-im, %hd-40;
                     line-height: 40px;
                     @include border-radius(20px);
                     @include transition(0.3s ease-in-out);
+
                     i {
                         @extend %text-color, %font-14;
                         @include transition(0.3s ease-in-out);
                     }
-                &:hover {
-                    @extend %bgtheme-im;
-                    @include transition(0.3s ease-in-out);
-                    i {
-                    @extend %white-color;
-                    @include transition(0.3s ease-in-out);
+
+                    &:hover {
+                        @extend %bgtheme-im;
+                        @include transition(0.3s ease-in-out);
+
+                        i {
+                            @include transition(0.3s ease-in-out);
+                        }
                     }
-                }
 
                 }
-            }     
+            }
         }
+
         &::after {
-        @extend %abs, %top-0, %left-0, %w-100, %h-100;
-        background: none;
-        @include breakpoint(md){
-            background: rgba(0, 0, 0, 0.8);
+            @extend %abs, %top-0, %left-0, %w-100, %h-100;
+            background: none;
+
+            @include breakpoint(md) {
+                background: rgba(0, 0, 0, 0.8);
+            }
+
+            @extend %opacity-0;
+            @include transition(0.3s ease-in-out);
         }
-        @extend %opacity-0;          
-        @include transition(0.3s ease-in-out);
-        }
+
         &:hover {
             &::after {
                 @extend %opacity-1;
                 @include transition(0.3s ease-in-out);
             }
+
             .inneritem {
                 @extend %opacity-1;
+
                 .upitem {
-                &:nth-child(1) {
-                    @include transform(translate(0px));
-                    @include transition(0.3s ease-in-out);
-                }
-                &:nth-child(2) {
-                    @include transform(translate(0px));
-                    @include transition(0.3s ease-in-out);
-                }
+                    &:nth-child(1) {
+                        @include transform(translate(0px));
+                        @include transition(0.3s ease-in-out);
+                    }
+
+                    &:nth-child(2) {
+                        @include transform(translate(0px));
+                        @include transition(0.3s ease-in-out);
+                    }
                 }
             }
-        }        
-    }    
+        }
+    }
 }
