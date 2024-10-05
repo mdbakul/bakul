@@ -204,6 +204,5 @@
     </div>
 </div>
 <!-- header end here -->
-
 <!-- header area end -->
 <?php get_template_part( 'template-parts/header/header-side-info' ); ?>
