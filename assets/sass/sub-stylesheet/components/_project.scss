@@ -71,12 +71,6 @@
             @include transition(0.3s ease-in-out);
 
             .upitem {
-                @extend %d-none;
-
-                @include breakpoint(md) {
-                    display: inherit;
-                }
-
                 &:nth-child(1) {
                     margin-right: 10px;
                     @include transform(translate(51px));

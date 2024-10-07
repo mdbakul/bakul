@@ -247,7 +247,7 @@ a h6 {
   -webkit-box-orient: vertical;
 }
 
-.accordion-item .accordion-button:after, .projectfilter__item .inneritem .upitem, .even__pagination,
+.accordion-item .accordion-button:after, .even__pagination,
 .testmonial__pagination {
   display: none;
 }
@@ -1700,11 +1700,6 @@ input, textarea, select {
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-}
-@media (min-width: 768px) {
-  .projectfilter__item .inneritem .upitem {
-    display: inherit;
-  }
 }
 .projectfilter__item .inneritem .upitem:nth-child(1) {
   margin-right: 10px;
