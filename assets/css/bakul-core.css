@@ -1743,15 +1743,10 @@ input, textarea, select {
   transition: 0.3s ease-in-out;
 }
 .projectfilter__item::after {
-  background: none;
+  background: rgba(0, 0, 0, 0.8);
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-}
-@media (min-width: 768px) {
-  .projectfilter__item::after {
-    background: rgba(0, 0, 0, 0.8);
-  }
 }
 .projectfilter__item:hover::after {
   -webkit-transition: 0.3s ease-in-out;

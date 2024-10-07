@@ -108,12 +108,7 @@
 
         &::after {
             @extend %abs, %top-0, %left-0, %w-100, %h-100;
-            background: none;
-
-            @include breakpoint(md) {
-                background: rgba(0, 0, 0, 0.8);
-            }
-
+            background: rgba(0, 0, 0, 0.8);
             @extend %opacity-0;
             @include transition(0.3s ease-in-out);
         }
